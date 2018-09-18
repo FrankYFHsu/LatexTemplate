@@ -1,0 +1,246 @@
+\chapter{Thesis Template}
+
+This file is a {\LaTeX} thesis template for NCLab's thesis.
+The member should review the source file.
+The source of this template can be downloaded at : \url{https://github.com/FrankYFHsu/LatexTemplate}
+
+\section{Main part}
+The following code is the source code of the main part of this template file.
+\lstinputlisting[language=Tex]{thesis_template.tex}
+
+
+\section{Bibliography and Citation}
+
+Usually, to generate the bibliography, we need to prepare a bibtex (.bib) file that provides information of references.
+Bibtex \url{http://www.bibtex.org/Using/} is a format, it looks like 
+\lstinputlisting[language=Tex]{bib_example.bib}
+Then, we save this content as a .bib file.
+
+The type InProceedings is for conference paper and Article is for journal paper. You can google their difference.
+The term such as KarPower2010 is a citation-key or also called BibTeX key that we use it to identify those references.
+My personal rule to define the key for a reference is: The first 3 characters of the first author’s last name $+$ The first word of the title $+$ The publication year.
+
+Usually, IEEE xplore, ACM digital library, google scholar provide the paper information in BibTeX format.
+Whatever, you need to modify those BibTeX as some entries may not be correct.
+
+Then, before the end of document, we will insert two commands such as:
+\begin{lstlisting}[language=Tex]
+\bibliographystyle{IEEEtran} % Usually we follow IEEE style
+\bibliography{bib_example}
+\end{lstlisting}
+
+So, to cite some references like \cite{KarPower2010} or \cite{LeeSLAW2009,ChoFriendship2011,WhiTemporal2012},
+the source is:
+\begin{lstlisting}[language=Tex]
+\cite{KarPower2010} or \cite{LeeSLAW2009,ChoFriendship2011,WhiTemporal2012}
+\end{lstlisting}
+
+
+Note that, if we change the citation or bib file, or we are first time to generate bibliography, we need to compile our .tex file by bibtex.
+The overall process is: (1)PDFLaTeX, (2)BibTex, (3)PDFLaTeX, (4)PDFLaTeX.
+
+
+\section{Example of Figures}
+
+
+\begin{figure}[!tb]
+\centering
+\includegraphics[width=3.4in]{figs//Rate50k.eps}
+\caption{Example of a single figure}
+\label{fig.1}
+\end{figure}
+
+Fig. \ref{fig.1} is an example of a single figure. The source is:
+\begin{lstlisting}[language=Tex]
+\begin{figure}[!tb]
+\centering
+\includegraphics[width=3.4in]{figs//Rate50k.eps}
+\caption{Example}
+\label{fig.1}
+\end{figure}
+\end{lstlisting}
+
+\begin{figure*}[!tb]
+\centering
+\subfloat[Delivery rate]{\includegraphics[width= 2.2in]{figs//Rate50k.eps}}
+\subfloat[Overhead]{\includegraphics[width= 2.2in]{figs//Overhead50k.eps}}
+\subfloat[Latency]{\includegraphics[width= 2.2in]{figs//Latency50k.eps}}\\
+\subfloat[Delivery rate]{\includegraphics[width= 2.2in]{figs//Rate100k.eps}}
+\subfloat[Overhead]{\includegraphics[width= 2.2in]{figs//Overhead100k.eps}}
+\subfloat[Latency]{\includegraphics[width= 2.2in]{figs//Latency100k.eps}}
+\caption{Example of sub figures}%
+\label{fig.2}%
+\end{figure*}
+
+
+Fig. \ref{fig.2} is an example of subfigures. The source is:
+\begin{lstlisting}[language=Tex]
+\begin{figure*}[!tb]
+\centering
+\subfloat[Delivery rate]{\includegraphics[width= 2.3in]{figs//Rate50k.eps}}
+\subfloat[Overhead]{\includegraphics[width= 2.3in]{figs//Overhead50k.eps}}
+\subfloat[Latency]{\includegraphics[width= 2.3in]{figs//Latency50k.eps}}\\
+\subfloat[Delivery rate]{\includegraphics[width= 2.3in]{figs//Rate100k.eps}}
+\subfloat[Overhead]{\includegraphics[width= 2.3in]{figs//Overhead100k.eps}}
+\subfloat[Latency]{\includegraphics[width= 2.3in]{figs//Latency100k.eps}}
+\caption{Example figures. (a)--(c) 50k case and (d)--(f) 100k case.}%
+\label{fig.2}%
+\end{figure*}
+\end{lstlisting}
+
+To reference a figure, you need to set the label of that figure (by the way, you can set the label of table, equation, chapter, section, definition, etc.).
+Then, use the command $\setminus$ref$\{label\}$. For example,
+\begin{lstlisting}[language=Tex]
+As shown in Fig. \ref{fig.1} and Fig. \ref{fig.2}, ....
+\end{lstlisting}
+
+
+
+%\pagebreak
+
+\section{Example of Table}
+
+\begin{table}[!tb]
+\renewcommand{\arraystretch}{1}
+\caption{An Example of a Table}
+\label{table1}
+\centering%
+\begin{tabular}{|l|l|}
+\hline
+Symbol & Meaning \\ \hline
+$L$ & Node population, the amount of nodes in a network \\
+$B$ & Buffer size, the number of messages that a node can store at most. \\
+$R_i$ & Remaining time-to-live (TTL) value for message $i$\\
+$M_i$ & Any distinct message $i$ in a network\\
+$T_i$ & Elapsed time from the creation of a distinct message $i$.\\
+$K(t)$ & The number of distinct messages in a network at time $t$\\
+$\vert K\vert$ & The total of distinct messages that were ever created in a network\\
+$\lambda$ & Meeting rate between two nodes\\
+\hline
+\end{tabular}%
+\end{table}
+
+\begin{table}[!tb]
+\renewcommand{\arraystretch}{1}
+\caption{An Example of a Table}
+\label{table2}
+\centering%
+\begin{tabular}{lp{10cm}}
+\hline
+Symbol & Meaning \\ \hline
+$L$ & Node population, the amount of nodes in a network \\
+$B$ & Buffer size, the number of messages that a node can store at most. \\
+$R_i$ & Remaining time-to-live (TTL) value for message $i$\\
+$M_i$ & Any distinct message $i$ in a network\\
+$T_i$ & Elapsed time from the creation of a distinct message $i$.\\
+$K(t)$ & The number of distinct messages in a network at time $t$\\
+$\vert K\vert$ & The total of distinct messages that were ever created in a network\\
+$\lambda$ & Meeting rate between two nodes\\
+\hline
+\end{tabular}%
+\end{table}
+
+The source to create Table \ref{table1} and Table \ref{table2}:
+
+\begin{lstlisting}[language=Tex]
+\begin{table}[!tb]
+\renewcommand{\arraystretch}{1}
+\caption{An Example of a Table}
+\label{table1}
+\centering%
+\begin{tabular}{|l|l|}
+\hline
+Symbol & Meaning \\ \hline
+$L$ & Node population, the amount of nodes in a network \\
+$B$ & Buffer size, the number of messages that a node can store at most. \\
+$R_i$ & Remaining time-to-live (TTL) value for message $i$\\
+$M_i$ & Any distinct message $i$ in a network\\
+$T_i$ & Elapsed time from the creation of a distinct message $i$.\\
+$K(t)$ & The number of distinct messages in a network at time $t$\\
+$\vert K\vert$ & The total of distinct messages that were ever created in a network\\
+$\lambda$ & Meeting rate between two nodes\\
+\hline
+\end{tabular}%
+\end{table}
+\end{lstlisting}
+
+\begin{lstlisting}[language=Tex]
+\begin{table}[!tb]
+\renewcommand{\arraystretch}{1}
+\caption{An Example of a Table}
+\label{table2}
+\centering%
+\begin{tabular}{lp{8cm}}
+\hline
+Symbol & Meaning \\ \hline
+$L$ & Node population, the amount of nodes in a network \\
+$B$ & Buffer size, the number of messages that a node can store at most. \\
+$R_i$ & Remaining time-to-live (TTL) value for message $i$\\
+$M_i$ & Any distinct message $i$ in a network\\
+$T_i$ & Elapsed time from the creation of a distinct message $i$.\\
+$K(t)$ & The number of distinct messages in a network at time $t$\\
+$\vert K\vert$ & The total of distinct messages that were ever created in a network\\
+$\lambda$ & Meeting rate between two nodes\\
+\hline
+\end{tabular}%
+\end{table}
+\end{lstlisting}
+
+Similar to figures, use the command $\setminus$ref$\{label\}$ to reference a table.
+\begin{lstlisting}[language=Tex]
+The source to create Table \ref{table1} and Table \ref{table2}:
+\end{lstlisting}
+
+\section{Example of Theorem, Problems and Definition}
+Defined these commands before $\setminus$begin$\{document\}$
+\begin{lstlisting}[language=Tex]
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{problem}{Problem}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}%Unnumbered 
+\end{lstlisting}
+
+\begin{theorem}[Theorem 1]
+\label{Theorem1}
+This is Theorem 1.
+\end{theorem}
+
+\begin{problem}[Problem 1]
+\label{Problem1}
+This is problem 1.
+\end{problem}
+
+\begin{definition}[Definition 1]
+\label{Definition1}
+This is Definition 1.
+\end{definition}
+
+\begin{remark}
+This is Remark 1.
+\end{remark}
+
+The source:
+\begin{lstlisting}[language=Tex]
+\begin{theorem}[Theorem 1]
+\label{Theorem1}
+This is Theorem 1.
+\end{theorem}
+
+\begin{problem}[Problem 1]
+\label{Problem1}
+This is problem 1.
+\end{problem}
+
+\begin{definition}[Definition 1]
+\label{Definition1}
+This is Definition 1.
+\end{definition}
+
+\begin{remark}
+This is Remark 1.
+\end{remark}
+\end{lstlisting}
+Reference: {\url{https://www.sharelatex.com/learn/latex/Theorems_and_proofs}}

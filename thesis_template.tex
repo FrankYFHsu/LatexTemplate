@@ -1,0 +1,85 @@
+\documentclass[11pt,a4paper,titlepage,oneside]{book}
+%\documentclass[11pt,a4paper,titlepage,twoside]{book}
+
+\usepackage{graphicx}
+\usepackage[ruled,linesnumbered,lined,resetcount,algochapter]{algorithm2e}
+% Note that IEEE does not support algorithm2e by default
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amsthm} % For typesetting theorems (AMS style)
+\usepackage[usenames,dvipsnames]{xcolor}% for set the font color
+\usepackage{graphicx}
+\usepackage{epstopdf} % Let pdfLatex accept EPS files
+\usepackage{array}
+\usepackage{color}
+\usepackage{pdfpages}
+\usepackage[caption=false,font=footnotesize]{subfig}
+\usepackage{comment} % To comment some blocks
+\usepackage{multirow}
+\usepackage{cite}
+\usepackage{appendix} 
+\usepackage{tablefootnote}
+\usepackage[nottoc]{tocbibind} % Add lof, lot into toc
+\usepackage[colorlinks=false]{hyperref} % Can comment this
+\usepackage{listings} % display source code
+\include{listings_settings} % settings for listings package
+\newcommand{\addcolor}[1]{{\color{blue}#1}} %color font
+\newcommand{\notecolor}[1]{{\color{red}#1}} %color font
+
+%For paper, you can let the counter start at each section
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{problem}{Problem}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}%Unnumbered 
+
+% For lab' thesis
+\textwidth 160.0 mm
+\textheight 220.0 mm
+\topmargin -3.0 mm
+\oddsidemargin 4.0 mm
+\evensidemargin -6.0 mm
+
+\setcounter{secnumdepth}{3}
+\renewcommand{\baselinestretch}{1.4}
+\pagestyle{plain}
+
+
+
+\begin{document}
+\includepdf[pages=1]{cover.pdf}
+%\includepdf[pages=1]{frontmatter/Library_author_new.pdf}
+%\includepdf[pages=1]{frontmatter/Library_extend.pdf}
+%\includepdf[pages=1]{frontmatter/advisor_ch.pdf}
+%\includepdf[pages=1]{frontmatter/advisor_en.pdf}
+%\includepdf[pages=1]{frontmatter/Committee_ch.pdf}
+%\includepdf[pages=1]{frontmatter/Committee_en.pdf}
+\frontmatter
+
+
+%\includepdf[pages={1,2},addtotoc={1,chapter,1,Abstract (Chinese),p1},pagecommand={\thispagestyle{plain}}]{frontmatter/abstractCH.pdf}
+\include{frontmatter/abstractEN}
+
+%\includepdf[pages={1},addtotoc={1,chapter,1,Acknowledgement,p2},pagecommand={\thispagestyle{plain}}]{frontmatter/acknowledge.pdf}
+
+%%Except for english abstract, other documents are external pdf files.
+
+
+\tableofcontents % toc
+\listoffigures % lof
+\listoftables % lot
+\mainmatter\setcounter{page}{1}
+
+\include{chapters/ch01}
+\include{chapters/ch02}
+\include{chapters/ch03}
+%add chapters
+\include{chapters/appendix}
+
+\bibliographystyle{IEEEtran}
+{\footnotesize %Let bibliography use smaller font size
+	\bibliography{bib_example}
+}
+\end{document}

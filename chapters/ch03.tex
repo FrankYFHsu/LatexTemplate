@@ -1,0 +1,249 @@
+\chapter{Equations}
+
+\begin{enumerate}
+\item equation+aligned
+\begin{equation}
+\begin{aligned}
+& \text{minimize}
+& & C=\sum_{i,j=1}^{n}c_{ij}x_{ij} \\
+& \text{subject to}
+& & \sum_{i,j=1}^{n}x_{ji}+b_{i}=\sum_{i,j=1}^{n}x_{ij},\; 1^{T}b=0 \\
+&&& l_{ij}\leq x_{ij}\leq u_{ij}.
+\end{aligned}
+\end{equation}
+\begin{lstlisting}[language=Tex]
+\begin{equation}
+\begin{aligned}
+& \text{minimize}
+& & C=\sum_{i,j=1}^{n}c_{ij}x_{ij} \\
+& \text{subject to}
+& & \sum_{i,j=1}^{n}x_{ji}+b_{i}=\sum_{i,j=1}^{n}x_{ij},\; 1^{T}b=0 \\
+&&& l_{ij}\leq x_{ij}\leq u_{ij}.
+\end{aligned}
+\end{equation}
+\end{lstlisting}
+
+\item align
+\begin{align}
+& \text{minimize}
+& & c^{T}x+b \\
+& \text{subject to}
+& & Gx\preceq h \\
+&&& Ax=b,
+\end{align}
+
+\begin{lstlisting}[language=Tex]
+\begin{align}
+& \text{minimize}
+& & c^{T}x+b \\
+& \text{subject to}
+& & Gx\preceq h \\
+&&& Ax=b,
+\end{align}
+\end{lstlisting}
+
+\item align+aligned
+\begin{align}
+\begin{aligned}
+& \text{minimize}
+& & c^{T}x+b \\
+& \text{subject to}
+& & Gx\preceq h \\
+&&& Ax=b,
+\end{aligned}
+\end{align}
+
+\begin{lstlisting}[language=Tex]
+\begin{align}
+\begin{aligned}
+& \text{minimize}
+& & c^{T}x+b \\
+& \text{subject to}
+& & Gx\preceq h \\
+&&& Ax=b,
+\end{aligned}
+\end{align}
+\end{lstlisting}
+
+\item align
+\begin{align}
+\max\limits_{n_1,n_2,...,n_k}
+&\text{\quad}\sum_{i=1}^{K}(1-\text{exp}(-\lambda n_i R_i)),\label{eq1}\\
+\text{subject to}
+&\text{\quad}\sum_{i=1}^{K}n_ix-LB \leq 0,\label{eq2}\\
+&\text{\quad} n_i-L \leq 0,\forall i,\label{eq3}\\
+&\text{\quad} n_i \geq 1, \forall i.\label{eq4}
+\end{align}
+
+\begin{lstlisting}[language=Tex]
+\begin{align}
+\max\limits_{n_1,n_2,...,n_k}
+&\text{\quad}\sum_{i=1}^{K}(1-\text{exp}(-\lambda n_i R_i)),\label{eq1}\\
+\text{subject to}
+&\text{\quad}\sum_{i=1}^{K}n_ix-LB \leq 0,\label{eq2}\\
+&\text{\quad} n_i-L \leq 0,\forall i,\label{eq3}\\
+&\text{\quad} n_i \geq 1, \forall i.\label{eq4}
+\end{align}
+\end{lstlisting}
+
+\item align$^{\ast}$
+\begin{align*}
+L(x,\lambda ,\nu )& =c^{T}x+\lambda ^{T}(Gx-h)+\nu ^{T}(Ax-b) \\
+& =(c^{T}+\lambda^{T}G+\nu ^{T}A)x-\lambda ^{T}h-\nu ^{T}b.
+\end{align*}
+
+\begin{lstlisting}[language=Tex]
+\begin{align*}
+L(x,\lambda ,\nu )& =c^{T}x+\lambda ^{T}(Gx-h)+\nu ^{T}(Ax-b) \\
+& =(c^{T}+\lambda^{T}G+\nu ^{T}A)x-\lambda ^{T}h-\nu ^{T}b.
+\end{align*}
+\end{lstlisting}
+
+\item align
+\begin{align}
+& \max \sum\limits_i^{} {Q_i^s (t)\mu (i,t)}  \\
+& \max \sum\limits_i^{} {Q_i^s (t)\min \{ Q_i^s (t),\mu (i,t)} \}  \\
+& \max \sum\limits_i^{} {(Q_i^s (t))^2  - } (Q_i^e (t))^2
+\end{align}
+
+\begin{lstlisting}[language=Tex]
+\begin{align}
+& \max \sum\limits_i^{} {Q_i^s (t)\mu (i,t)}  \\
+& \max \sum\limits_i^{} {Q_i^s (t)\min \{ Q_i^s (t),\mu (i,t)} \}  \\
+& \max \sum\limits_i^{} {(Q_i^s (t))^2  - } (Q_i^e (t))^2
+\end{align}
+\end{lstlisting}
+
+\item equation
+\begin{equation}
+g(\lambda ,\nu )=\inf_{x}L(x,\lambda ,\nu )=-\lambda ^{T}h-\nu
+^{T}b+\inf_{x}(c^{T}+\lambda ^{T}G+\nu ^{T}A)x
+\end{equation}
+
+\begin{lstlisting}[language=Tex]
+\begin{equation}
+g(\lambda ,\nu )=\inf_{x}L(x,\lambda ,\nu )=-\lambda ^{T}h-\nu
+^{T}b+\inf_{x}(c^{T}+\lambda ^{T}G+\nu ^{T}A)x
+\end{equation}
+\end{lstlisting}
+
+\item equation$^{\ast}$
+\begin{equation*}
+\Delta w_{s}(t)=\frac{x_{s}(t)(1-q_{s}(t))}{w_{s}}-\frac{%
+w_{s}(t)x_{s}(t)q_{s}(t)}{2}\times \frac{4}{3}
+\end{equation*}
+
+\begin{lstlisting}[language=Tex]
+\begin{equation*}
+\Delta w_{s}(t)=\frac{x_{s}(t)(1-q_{s}(t))}{w_{s}}-\frac{%
+w_{s}(t)x_{s}(t)q_{s}(t)}{2}\times \frac{4}{3}
+\end{equation*}
+\end{lstlisting}
+
+\item equation$^{\ast}$+cases
+\begin{equation*}
+g(\lambda ,\nu )=
+\begin{cases} -\lambda ^{T}h-\nu ^{T}b & c^{T}+\lambda ^{T}G+\nu ^{T}A=0
+\\
+-\infty &\text{otherwise.}
+\end{cases}
+\end{equation*}
+
+\begin{lstlisting}[language=Tex]
+\begin{equation*}
+g(\lambda ,\nu )=
+\begin{cases} -\lambda ^{T}h-\nu ^{T}b & c^{T}+\lambda ^{T}G+\nu ^{T}A=0
+\\
+-\infty &\text{otherwise.}
+\end{cases}
+\end{equation*}
+\end{lstlisting}
+
+\item align$^{\ast}$+intertext
+\begin{align*}
+U_{s}(x_{s})& =\int f_{s}(x_{s})dx_{s} \\
+\intertext{text you want}\\
+& =\int q_{s}dx_{s}\\
+& =\int \frac{3}{2x_{s}^{2}D_{s}^{2}+3}dx_{s}\\
+& =\frac{\sqrt{\frac{3}{2}}}{D_{s}}\tan ^{-1}(%
+\sqrt{\frac{2}{3}}x_{s}D_{s})
+\end{align*}
+
+\begin{lstlisting}[language=Tex]
+\begin{align*}
+U_{s}(x_{s})& =\int f_{s}(x_{s})dx_{s} \\
+\intertext{text you want}\\
+& =\int q_{s}dx_{s}\\
+& =\int \frac{3}{2x_{s}^{2}D_{s}^{2}+3}dx_{s}\\
+& =\frac{\sqrt{\frac{3}{2}}}{D_{s}}\tan ^{-1}(%
+\sqrt{\frac{2}{3}}x_{s}D_{s})
+\end{align*}
+\end{lstlisting}
+
+\item align with intertext
+\begin{align}
+\intertext{For $m=1$,}\\
+(A^{1})^{-1}& =(A)^{-1}=(A^{-1})^{1}\\
+\intertext{Assume the result holds in the case $m=k$, that is,}\\
+(A^{k})^{-1}& =(A^{-1})^{k}\\
+\intertext{It follows that}\\
+(A^{-1})^{k+1}A^{k+1}& =A^{-1}(A^{-1})^{k}A^{k}A=A^{-1}A=I\\
+\intertext{and}\\
+A^{k+1}(A^{-1})^{k+1}& =AA^{k}(A^{-1})^{k}A^{-1}=AA^{-1}=I\\
+\intertext{Therefore}\\
+(A^{-1})^{k+1}& =(A^{k+1})^{-1}
+\end{align}
+
+\begin{lstlisting}[language=Tex]
+\begin{align}
+\intertext{For $m=1$,}\\
+(A^{1})^{-1}& =(A)^{-1}=(A^{-1})^{1}\\
+\intertext{Assume the result holds in the case $m=k$, that is,}\\
+(A^{k})^{-1}& =(A^{-1})^{k}\\
+\intertext{It follows that}\\
+(A^{-1})^{k+1}A^{k+1}& =A^{-1}(A^{-1})^{k}A^{k}A=A^{-1}A=I\\
+\intertext{and}\\
+A^{k+1}(A^{-1})^{k+1}& =AA^{k}(A^{-1})^{k}A^{-1}=AA^{-1}=I\\
+\intertext{Therefore}\\
+(A^{-1})^{k+1}& =(A^{k+1})^{-1}
+\end{align}
+\end{lstlisting}
+
+\item max with under var
+\begin{equation*}
+\begin{aligned}
+& \max\limits_{n_1,n_2,...,n_k}
+& & \sum_{i=1}^{K}(1-\text{exp}(-\lambda n_i R_i)),\\
+& \text{subject to}
+& & \sum_{i=1}^{K}n_ix-LB \leq 0, \\
+&&& n_i-L \leq 0,\forall i,\\
+&&& n_i \geq 1, \forall i.
+\end{aligned}
+\end{equation*}
+
+\begin{lstlisting}[language=Tex]
+\begin{equation*}
+\begin{aligned}
+& \max\limits_{n_1,n_2,...,n_k}
+& & \sum_{i=1}^{K}(1-\text{exp}(-\lambda n_i R_i)),\\
+& \text{subject to}
+& & \sum_{i=1}^{K}n_ix-LB \leq 0, \\
+&&& n_i-L \leq 0,\forall i,\\
+&&& n_i \geq 1, \forall i.
+\end{aligned}
+\end{equation*}
+\end{lstlisting}
+
+\item BB fonts
+$\mathbb{N,R,Z}$
+
+\begin{lstlisting}[language=Tex]
+$\mathbb{N,R,Z}$
+\end{lstlisting}
+
+\item cal fonts
+$\mathcal{IDP}$
+\begin{lstlisting}[language=Tex]
+$\mathcal{IDP}$
+\end{lstlisting}
+\end{enumerate}
